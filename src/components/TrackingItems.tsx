@@ -11,11 +11,11 @@ const TrackingItems: React.FC = () => {
     <Fragment>
       <h2>Income</h2>
       {incomes.map((inc) => (
-        <TrackingItem />
+        <TrackingItem key={String(inc.id)} item={inc} />
       ))}
       <h2>Expenses</h2>
       {expenses.map((exp) => (
-        <TrackingItem />
+        <TrackingItem key={String(exp.id)} item={exp} />
       ))}
     </Fragment>
   );

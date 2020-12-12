@@ -1,6 +1,7 @@
 import React from 'react';
 
 export interface ITrackingItem {
+  id: String;
   title: String;
   amount: Number;
   date: Date;
@@ -16,6 +17,7 @@ interface ITrackingContext {
   funcs: {
     addIncome: Function;
     addExpense: Function;
+    removeTrackingItem: Function
   };
 }
 
@@ -27,5 +29,6 @@ export const TrackingContext = React.createContext<ITrackingContext>({
   funcs: {
     addIncome: () => null,
     addExpense: () => null,
+    removeTrackingItem: () => null
   },
 });

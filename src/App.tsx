@@ -14,6 +14,13 @@ const App: React.FC = () => {
   const addExpense = (expense: ITrackingItem): void => {
     setExpenses([...expenses, expense]);
   };
+  const removeTrackingItem = (id: String): void => {
+    const newIncomes = incomes.filter((inc) => inc.id !== id);
+    const newExpenses = expenses.filter((exp) => exp.id !== id);
+
+    setIncomes(newIncomes);
+    setExpenses(newExpenses);
+  };
 
   return (
     <Fragment>
@@ -21,7 +28,7 @@ const App: React.FC = () => {
       <TrackingContext.Provider
         value={{
           items: { incomes, expenses },
-          funcs: { addIncome, addExpense },
+          funcs: { addIncome, addExpense, removeTrackingItem },
         }}
       >
         <Tracking />
